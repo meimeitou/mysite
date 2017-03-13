@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sty1/style.css' %}" />
+    <title></title>
+</head>
+<body>
+{% if test_str %}
+ <h4>{{ test_str }}</h4>
+{% endif %}
+<p>现在的时间是 {{ current_date }}.</p>
+<p>my name is 殷其威</p>
+</body>
+</html>

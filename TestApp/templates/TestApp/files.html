@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<form enctype="multipart/form-data" action="{% url 'TestApp:upload' %}" method="post">
+{% csrf_token %}
+<input type="file" name="myfile">
+<input type="input" name="name">
+{% csrf_token %}
+<br/>
+<input type="submit" value="upload"/>
+
+{% if name  %}
+<p>{{ message }}</p>
+<P>{{ name }}</P>
+{% endif%}
+
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索汽车</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="q"><input type="checkbox" name="chk_contains">是否模糊搜索
+        <input type="submit" value="Search">
+    </form>
+{{ message }}
+<p>
+{% for car in car_list %}
+    <li>
+        {{ car.brand }}
+    </li>
+{% endfor %}
+</body>
+</html>

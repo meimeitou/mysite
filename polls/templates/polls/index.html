@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'sty1/style.css' %}">
+</head>
+<body>
+{% load admin_extras %}
+{% if my_test_str %}
+<h4>new come</h4>
+<h4>{{ my_test_str |cut:' '}}</h4>
+{% endif %}
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+{#   使用命名空间指定    <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>#}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>
